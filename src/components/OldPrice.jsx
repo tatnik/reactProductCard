@@ -1,9 +1,9 @@
 import React from 'react';
 
-const OldPrice  = () => {
+const OldPrice  = ({value}) => {
 
   return (
-  <del>55555 ₽</del>
+  <del>{value}</del>
   );
 }
 

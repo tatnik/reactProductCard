@@ -1,9 +1,9 @@
 import React from 'react';
 
-const NewPrice = () => {
+const NewPrice = ({value}) => {
 
   return (
-    <b>33333 ₽</b>
+    <b>{value}</b>
   );
 }
 

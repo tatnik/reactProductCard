@@ -1,8 +1,8 @@
 import React from "react";
 
-const Title = () => {
+const Title = ({cildren}) => {
   return(
-    <h1>3D принтер</h1>
+    <h1>{cildren}</h1>
   )
 }
 

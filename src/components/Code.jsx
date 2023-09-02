@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Code = () => {
+const Code = ({cildren}) => {
 
 return (
-  <small>Артикул: 2840367</small>
+  <small>{cildren}</small>
 );
 }
 

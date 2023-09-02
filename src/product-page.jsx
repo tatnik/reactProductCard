@@ -12,13 +12,13 @@ import Description from "./components/Description";
 const ProductPage = ({product}) =>{
   return (
 <section className="card">
-  <Title />
-  <Code />
+  <Title>{product.name} </Title>
+  <Code >{product.code} </Code>
   <div style={{display:"flex"}}>
-    <Gallery/>
+    <Gallery src={product.src} alt={product.alt}/>
     <div>
       <p>
-        Цена: <OldPrice/> <NewPrice/>
+        Цена: <OldPrice value={product.oldPrice}/> <NewPrice value={product.price}/>
       </p>
       <div>
         Количество: <Count/>
@@ -27,7 +27,7 @@ const ProductPage = ({product}) =>{
       <button type="button">Купить</button>
     </div>
   </div>
-  <Description/>
+  <Description text={product.description}/>
 </section>
 )}
 
