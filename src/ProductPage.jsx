@@ -5,6 +5,8 @@ import Gallery from "./components/Gallery";
 import Count from "./components/Count";
 import Description from "./components/Description";
 import FullPrice from "./components/FullPrice";
+import Comments from "./components/Comments";
+import Popularyty from "./components/Popularity";
 
 
 
@@ -24,9 +26,11 @@ const ProductPage = ({product}) =>{
       </div>
       <p><span> Доставка: </span> 1 апреля </p>
       <button type="button">Купить</button>
+      <Popularyty count={product.comments.length} />
     </div>
   </div>
   <Description text={product.description}/>
+  <Comments comments={product.comments}/>
 </section>
 )}
 

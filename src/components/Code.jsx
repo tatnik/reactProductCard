@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Code = ({cildren}) => {
+const Code = ({children}) => {
 
 return (
-  <small>{cildren}</small>
+  <small>{children}</small>
 );
 }
 
