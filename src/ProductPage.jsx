@@ -2,10 +2,9 @@ import React from "react"
 import Title from "./components/Title";
 import Code from "./components/Code";
 import Gallery from "./components/Gallery";
-import OldPrice from "./components/OldPrice";
-import NewPrice from "./components/NewPrice";
 import Count from "./components/Count";
 import Description from "./components/Description";
+import FullPrice from "./components/FullPrice";
 
 
 
@@ -18,7 +17,7 @@ const ProductPage = ({product}) =>{
     <Gallery src={product.src} alt={product.alt}/>
     <div>
       <p>
-        Цена: <OldPrice value={product.oldPrice}/> <NewPrice value={product.price}/>
+        Цена: <FullPrice oldPrice={product.oldPrice} newPrice={product.price}/>
       </p>
       <div>
         Количество: <Count/>

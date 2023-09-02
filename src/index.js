@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { product } from './mock';
-import ProductPage from './product-page';
+import ProductPage from './ProductPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
