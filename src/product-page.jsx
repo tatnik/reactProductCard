@@ -8,9 +8,10 @@ import Count from "./components/Count";
 import Description from "./components/Description";
 
 
-const ProductPage = () =>{
+
+const ProductPage = ({product}) =>{
   return (
-<section>
+<section className="card">
   <Title />
   <Code />
   <div style={{display:"flex"}}>
