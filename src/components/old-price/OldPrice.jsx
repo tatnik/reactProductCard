@@ -1,9 +1,11 @@
-import React from 'react';
-import { StyledOldPrice } from './styled';
+import { styled } from 'styled-components';
 
-const OldPrice = ({ value, className }) => {
-
-  return <StyledOldPrice className={className}>{value}</StyledOldPrice>;
-}
+const OldPrice = styled.del.attrs((props) => ({
+  children: `${props.value}  ₽`
+}))`
+  font-size: 18px;
+  color: ${(props) => (props.theme.textColorMuted)};
+  line-height: 1;
+`;
 
 export default OldPrice;

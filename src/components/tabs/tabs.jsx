@@ -1,7 +1,7 @@
 import React from "react";
 import { TitleList, TitleButton, TitleText, Content } from "./styled";
 
-function Tabs({ tabs, activeTab = 0 }) {
+function Tabs({ tabs, activeTab = 1 }) {
   return (
     <div>
       <TitleList>
@@ -11,7 +11,7 @@ function Tabs({ tabs, activeTab = 0 }) {
             if (index === activeTab) {
               return (
                 <TitleButton active key={item.title}>
-                  <TitleText small active>
+                  <TitleText as="h2" small active>
                     {item.title}
                   </TitleText>
                 </TitleButton>
@@ -19,13 +19,13 @@ function Tabs({ tabs, activeTab = 0 }) {
             }
             return (
               <TitleButton key={item.title}>
-                <TitleText small>{item.title}</TitleText>
+                <TitleText as="h2" small>{item.title}</TitleText>
               </TitleButton>
             );
           })}
       </TitleList>
       <Content>{tabs[activeTab].content}</Content>
-    </div>
+    </div >
   );
 }
 

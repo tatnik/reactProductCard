@@ -1,11 +1,11 @@
-import React from 'react';
-import StyledCode from './styled';
+import { styled } from 'styled-components';
 
-const Code = ({ children }) => {
 
-  return (
-    <StyledCode>Артикул: {children}</StyledCode>
-  );
-}
+const Code = styled.span.attrs((props) => ({
+  children: `Артикул: ${props.children}`
+}))`
+  color: ${(props) => props.theme.textColorMuted};
+  font-size: 12px;
+`;
 
 export default Code;

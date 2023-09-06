@@ -13,8 +13,8 @@ export const TitleList = styled.div`
 export const TitleButton = styled.button`
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: ${(props => props.theme.indent)};
+  padding-right: ${(props => props.theme.indent)};
   border: none;
   cursor: pointer;
   box-shadow: none;
@@ -23,7 +23,7 @@ export const TitleButton = styled.button`
 `;
 
 export const TitleText = styled(Title)`
-  color: ${(props) => (props.active ? "#333 " : "#888")};
+  color: ${(props) => (props.active ? props.theme.textColor : props.theme.textColorMuted)};
 `;
 
 export const Content = styled.div`

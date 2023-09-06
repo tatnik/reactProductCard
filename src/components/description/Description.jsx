@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from '../button/button';
+import { DescriptionButton } from './styled';
 
 const Description = ({ text }) => {
 
   return (
     <div>
       {text}
-      <Button type="button">Подробнее</Button>
+      <DescriptionButton type="button">Подробнее</DescriptionButton>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 export const product = {
   name: '3D принтер',
-  code: 2840367,
+  code: '2840367',
   price: 3333,
   oldPrice: 55555,
   delivery: '1 апреля',
