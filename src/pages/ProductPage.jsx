@@ -5,12 +5,12 @@ import Description from "./../components/description/Description";
 import Comments from "./../components/comments/Comments";
 import Popularyty from "./../components/popularity/Popularity";
 import { BuyButton, DeliveryValue, Header, PageCounter, PageFullPrice, ProductInfo, ProductInfoLine, ProductWrapper, StyledProductPage } from "./styled";
-import { Image } from "../elements";
 import Tabs from "../components/tabs/tabs";
 
 import Order from './../components/order/order';
 import PopUp from "../components/popup/popup";
 import Accordion from "../components/accordion/accordion";
+import Slider from "../components/slider/slider";
 
 
 
@@ -57,11 +57,7 @@ const ProductPage = ({ product, showInAccordion }) => {
         <Code >{product.code}</Code>
       </Header>
       <ProductWrapper>
-        <Image
-          src={product.src}
-          alt={product.alt}
-          maxWidth="200"
-        />
+        <Slider images={product.images} />
         <ProductInfo>
           <ProductInfoLine>
             Цена:{" "}

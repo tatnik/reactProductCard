@@ -9,7 +9,8 @@ const Button = styled.button`
   display: block;
   background: none;
   outline: none;
-
+  box-sizing: border-box;
+  
   &:active,
   &:hover {
     background: none;

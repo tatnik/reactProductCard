@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Title from "../title/Title";
 
 
 export const TitleButton = styled.button`
@@ -17,10 +16,7 @@ export const TitleButton = styled.button`
   font-size: 18px;
   cursor: ${(props) => (props.isActive ? "auto" : "pointer")};
   border-bottom: 1px solid black;
-`;
-
-export const TitleText = styled(Title)`
-  color: ${(props) => props.theme.textColor};
+  box-sizing: border-box;
 `;
 
 export const Content = styled.div`
