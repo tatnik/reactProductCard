@@ -17,21 +17,38 @@ import Accordion from "../components/accordion/accordion";
 
 
 const ProductPage = ({ product, showInAccordion }) => {
+
+  const [isShowAllDescription, setIsShowAllDescription] = useState(false);
+  const MAX_TEXT_SIZE = 200;
+  const COMMENTS_COUNT = 3;
+  const [commentsShow, setCommentsShow] = useState(COMMENTS_COUNT);
+
   const tabs = [
     {
       title: "Описание",
-      content: <Description text={product.description} />
+      content: <Description text={
+        isShowAllDescription
+          ? product.description
+          : product.description.slice(0, MAX_TEXT_SIZE)
+      }
+        onShowMore={() => setIsShowAllDescription(!isShowAllDescription)}
+        isShowAllDescription={isShowAllDescription}
+      />
     },
     {
       title: "Комментарии",
-      content: <Comments comments={product.comments} />
+      content: <Comments
+        comments={product.comments.slice(0, commentsShow)}
+        onShowMore={() => setCommentsShow(commentsShow + COMMENTS_COUNT)}
+        allCommentsLength={product.comments.length}
+      />
     }
   ];
   const [count, setCount] = useState(1);
   const price = product.price * count;
   const oldPrice = product.oldPrice * count;
   const [isShowPopup, setIsShowPopup] = useState(false);
-  const MAX_TEXT_SIZE = 200;
+
 
   return (
     <StyledProductPage>
