@@ -3,6 +3,7 @@ export const theme = {
   textColorMuted: "#888",
   buttonColor: "#94c507",
   buttonHover: "orange",
+  buttonDisabledColor: "#999",
   indent: "20px",
   font: 'Arial, "Helvetica", sans-serif',
   button: {

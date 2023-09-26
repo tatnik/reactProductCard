@@ -5,9 +5,13 @@ export const StyledCounter = styled.span`
   align-items: center;
 `;
 
-export const Value = styled.span`
-  font-size: 20px;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-`;
+export const Value = styled.input`
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+  `;

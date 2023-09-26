@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Title from "./../components/title/Title";
 import Code from "./../components/code/Code";
 import Description from "./../components/description/Description";
@@ -8,9 +8,15 @@ import { BuyButton, DeliveryValue, Header, PageCounter, PageFullPrice, ProductIn
 import { Image } from "../elements";
 import Tabs from "../components/tabs/tabs";
 
+import Order from './../components/order/order';
+import PopUp from "../components/popup/popup";
+import Accordion from "../components/accordion/accordion";
 
 
-const ProductPage = ({ product }) => {
+
+
+
+const ProductPage = ({ product, showInAccordion }) => {
   const tabs = [
     {
       title: "Описание",
@@ -21,6 +27,11 @@ const ProductPage = ({ product }) => {
       content: <Comments comments={product.comments} />
     }
   ];
+  const [count, setCount] = useState(1);
+  const price = product.price * count;
+  const oldPrice = product.oldPrice * count;
+  const [isShowPopup, setIsShowPopup] = useState(false);
+  const MAX_TEXT_SIZE = 200;
 
   return (
     <StyledProductPage>
@@ -37,21 +48,35 @@ const ProductPage = ({ product }) => {
         <ProductInfo>
           <ProductInfoLine>
             Цена:{" "}
-            <PageFullPrice oldPrice={product.oldPrice} newPrice={product.price} />
+            <PageFullPrice oldPrice={oldPrice} newPrice={price} />
           </ProductInfoLine>
           <ProductInfoLine>
-            Количество: <PageCounter />
+            Количество: <PageCounter
+              value={count}
+              onChange={(value) => setCount(value)}
+              minValue={1} />
           </ProductInfoLine>
           <ProductInfoLine><span> Доставка: </span>{" "}
             <DeliveryValue>{product.delivery}</DeliveryValue>
           </ProductInfoLine>
-          <BuyButton size="large">Купить</BuyButton>
+          <BuyButton
+            size="large"
+            onClick={() => setIsShowPopup(true)}
+          >Купить</BuyButton>
           <Popularyty count={product.comments.length} />
         </ProductInfo>
       </ProductWrapper>
-      <Tabs tabs={tabs} tabIndex={1} />
+      {showInAccordion ? <Accordion items={tabs} /> : <Tabs tabs={tabs} />}
+      <PopUp
+        isShow={isShowPopup}
+        onClose={() => setIsShowPopup(false)}
+        title="Оформление"
+      >
+        <Order />
+      </PopUp>
     </StyledProductPage>
   )
 }
+
 
 export default ProductPage;
