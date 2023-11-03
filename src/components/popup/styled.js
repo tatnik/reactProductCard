@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   transform: translate(-50%, -50%);
   background-color: #fff;
   min-width: 500px;
+  z-index:10;
 `;
 
 export const Close = styled(Button)`
