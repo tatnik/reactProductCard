@@ -6,7 +6,6 @@ import Comments from "./../components/comments/Comments";
 import Popularyty from "./../components/popularity/Popularity";
 import { BuyButton, DeliveryValue, Header, PageCounter, PageFullPrice, ProductInfo, ProductInfoLine, ProductWrapper, StyledProductPage } from "./styled";
 import Tabs from "../components/tabs/tabs";
-
 import Order from './../components/order/order';
 import PopUp from "../components/popup/popup";
 import Accordion from "../components/accordion/accordion";
